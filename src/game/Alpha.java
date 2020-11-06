@@ -21,6 +21,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**This is the main class of the game. It manages the different eras of the quiz 
+ * ({@linkplain game.QuizEra70s QuizEra70s}, {@linkplain game.TeenHack_Era2 TeenHack_Era2}, 
+ * {@linkplain game.Sega Sega}, and {@linkplain game.HackathonQuestionsRyan HackathonQuestionsRyan}).
+ * 
+ * Along with this, it manages {@linkplain game.QuestionBank QuestionBank} (where the quiz questions are
+ * stored) as well as {@linkplain game.Music Music} (the class that controls when each era's them plays).
+ * @author GeoSonicDash
+ */
 public class Alpha extends JFrame implements KeyListener, ActionListener {//opens program
 
     public static int era = 1;
@@ -70,6 +78,7 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
             Graphics2D g2 = (Graphics2D) g;
             RenderingHints rh = new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);
             g2.setRenderingHints(rh);
+            //Controls when each era's logic runs
             if (era == 1) {
                 g2.setColor(terminalGreen);
                 g2.setFont(terminal);
