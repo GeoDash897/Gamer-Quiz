@@ -1,3 +1,5 @@
+package game;
+
 //6/17/19
 
 import java.awt.Color;
@@ -47,7 +49,7 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
         terminalGreen = new Color(70, 235, 52);
         cyan = new Color(36, 177, 201);
         try {
-            terminal = Font.createFont(Font.TRUETYPE_FONT, new File("src\\resources\\clacon.ttf")).deriveFont(45f);
+            terminal = Font.createFont(Font.TRUETYPE_FONT, new File("src\\game\\resources\\clacon.ttf")).deriveFont(45f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(terminal);
         } catch (FontFormatException | IOException ex) {

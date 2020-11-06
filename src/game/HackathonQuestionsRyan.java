@@ -1,3 +1,5 @@
+package game;
+
 //Add Title screen, update screen (Sans fight),
 /**
  *
@@ -26,12 +28,12 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
 
     public void standard(Graphics2D g2) {
         sans = new Minigame();
-        caves = Toolkit.getDefaultToolkit().getImage("src\\resources\\MinecraftCave.png");
-        Rhydon = Toolkit.getDefaultToolkit().getImage("src\\resources\\Rhydon.png");
-        Bulbasaur = Toolkit.getDefaultToolkit().getImage("src\\resources\\Bulbasaur.png");
-        Mew = Toolkit.getDefaultToolkit().getImage("src\\resources\\Mew.png");
-        Arceus = Toolkit.getDefaultToolkit().getImage("src\\resources\\Arceus.png");
-        Blackhole = Toolkit.getDefaultToolkit().getImage("src\\resources\\Blackhole.jpg");
+        caves = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MinecraftCave.png");
+        Rhydon = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Rhydon.png");
+        Bulbasaur = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Bulbasaur.png");
+        Mew = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Mew.png");
+        Arceus = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Arceus.png");
+        Blackhole = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blackhole.jpg");
         g2.drawImage(caves, 0, 0, 2304, 1440, this);
         g2.setColor(Color.cyan);
         Font font = new Font("Serif", 35, 35);

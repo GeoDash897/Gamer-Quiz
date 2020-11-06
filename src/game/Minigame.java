@@ -1,8 +1,5 @@
+package game;
 
-/**
- *
- * @author ryansanjose
- */
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -14,6 +11,10 @@ import java.awt.event.KeyListener;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+/**
+ *
+ * @author ryansanjose
+ */
 public class Minigame extends HackathonQuestionsRyan implements KeyListener, ActionListener {
     private static Image sans;
     private static Image player;
@@ -45,11 +46,11 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
     private static Image victory;
 
     public void badtime(Graphics2D g2) {
-        sans = Toolkit.getDefaultToolkit().getImage("src\\resources\\sanshaha.png");
-        player = Toolkit.getDefaultToolkit().getImage("src\\resources\\Naenaeman.png");
-        beam = Toolkit.getDefaultToolkit().getImage("src\\resources\\Beam.png");
-        ball = Toolkit.getDefaultToolkit().getImage("src\\resources\\Ball.png");
-        victory = Toolkit.getDefaultToolkit().getImage("src\\resources\\Victory.gif");
+        sans = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\sanshaha.png");
+        player = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Naenaeman.png");
+        beam = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Beam.png");
+        ball = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Ball.png");
+        victory = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Victory.gif");
         hitsans = new Rectangle(sx, sy, 200, 200);
         hitplay = new Rectangle(px, py, 200, 200);
         hitbeam = new Rectangle(sx + 10, sy + 25, beamwidth, 100);

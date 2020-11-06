@@ -1,3 +1,4 @@
+package game;
 
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
@@ -23,7 +24,7 @@ public class Music {
 
     public static void loadEra1Theme() {
         try {
-            File musicPath = new File("src\\resources\\music files\\Era1Music.wav");//creates File object which has path of musicLocation
+            File musicPath = new File("src\\game\\resources\\music files\\Era1Music.wav");//creates File object which has path of musicLocation
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);//creating an object that is responsible 
             //for bringing the music from the music file to our Java application (gets that from the musicPath object)
             era1Theme = AudioSystem.getClip();//use clip class to play music, gets the audiostream from the AudioInput object
@@ -39,7 +40,7 @@ public class Music {
 
     public static void loadEra2Theme() {
         try {
-            File musicPath = new File("src\\resources\\music files\\Era2Music.wav");//creates File object which has path of musicLocation
+            File musicPath = new File("src\\game\\resources\\music files\\Era2Music.wav");//creates File object which has path of musicLocation
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);//creating an object that is responsible 
             //for bringing the music from the music file to our Java application (gets that from the musicPath object)
             era2Theme = AudioSystem.getClip();//use clip class to play music, gets the audiostream from the AudioInput object
@@ -55,7 +56,7 @@ public class Music {
 
     public static void loadEra3Theme() {
         try {
-            File musicPath = new File("src\\resources\\music files\\Era3Music.wav");//creates File object which has path of musicLocation
+            File musicPath = new File("src\\game\\resources\\music files\\Era3Music.wav");//creates File object which has path of musicLocation
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);//creating an object that is responsible 
             //for bringing the music from the music file to our Java application (gets that from the musicPath object)
             era3Theme = AudioSystem.getClip();//use clip class to play music, gets the audiostream from the AudioInput object
@@ -71,7 +72,7 @@ public class Music {
 
     public static void loadEra4Theme() {
         try {
-            File musicPath = new File("src\\resources\\music files\\Era4Music.wav");//creates File object which has path of musicLocation
+            File musicPath = new File("src\\game\\resources\\music files\\Era4Music.wav");//creates File object which has path of musicLocation
             AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);//creating an object that is responsible 
             //for bringing the music from the music file to our Java application (gets that from the musicPath object)
             era4Theme = AudioSystem.getClip();//use clip class to play music, gets the audiostream from the AudioInput object
