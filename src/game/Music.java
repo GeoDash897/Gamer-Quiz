@@ -5,7 +5,7 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-/**
+/**This class loading and playing music from the game.
  *
  * @author GeoSonicDash
  */
@@ -15,6 +15,9 @@ public class Music {
     private static Clip era3Theme;
     private static Clip era4Theme;
 
+    /**Runs main logic of class.
+     * 
+     */
     public static void standard() {
         loadEra1Theme();
         loadEra2Theme();
@@ -22,6 +25,9 @@ public class Music {
         loadEra4Theme();
     }
 
+    /**Loads Era 1 theme from .wav file and prepares it for playing.
+     * 
+     */
     public static void loadEra1Theme() {
         try {
             File musicPath = new File("src\\game\\resources\\music files\\Era1Music.wav");//creates File object which has path of musicLocation
@@ -38,6 +44,9 @@ public class Music {
         }
     }
 
+    /**Loads Era 2 theme from .wav file and prepares it for playing.
+     * 
+     */
     public static void loadEra2Theme() {
         try {
             File musicPath = new File("src\\game\\resources\\music files\\Era2Music.wav");//creates File object which has path of musicLocation
@@ -54,6 +63,9 @@ public class Music {
         }
     }
 
+    /**Loads Era 3 theme from .wav file and prepares it for playing.
+     * 
+     */
     public static void loadEra3Theme() {
         try {
             File musicPath = new File("src\\game\\resources\\music files\\Era3Music.wav");//creates File object which has path of musicLocation
@@ -70,6 +82,9 @@ public class Music {
         }
     }
 
+    /**Loads Era 4 theme from .wav file and prepares it for playing.
+     * 
+     */
     public static void loadEra4Theme() {
         try {
             File musicPath = new File("src\\game\\resources\\music files\\Era4Music.wav");//creates File object which has path of musicLocation
@@ -86,6 +101,11 @@ public class Music {
         }
     }
 
+    /**Plays/Stops the Era 1 theme.
+     * 
+     * @param start determines if the song should be stopped (0) or reset and played (1).
+     * @param setPosition position that music should be set to prior to being played.
+     */
     public static void runEra1Theme(int start, int setPosition) {
         if (start == 0) {
             era1Theme.stop();
@@ -99,6 +119,11 @@ public class Music {
         }
     }
 
+    /**Plays/Stops the Era 2 theme.
+     * 
+     * @param start determines if the song should be stopped (0) or reset and played (1).
+     * @param setPosition position that music should be set to prior to being played.
+     */
     public static void runEra2Theme(int start, int setPosition) {
         if (start == 0) {
             era2Theme.stop();
@@ -112,6 +137,11 @@ public class Music {
         }
     }
 
+    /**Plays/Stops the Era 3 theme.
+     * 
+     * @param start determines if the song should be stopped (0) or reset and played (1).
+     * @param setPosition position that music should be set to prior to being played.
+     */
     public static void runEra3Theme(int start, int setPosition) {
         if (start == 0) {
             era3Theme.stop();
@@ -125,6 +155,11 @@ public class Music {
         }
     }
 
+    /**Plays/Stops the Era 4 theme.
+     * 
+     * @param start determines if the song should be stopped (0) or reset and played (1).
+     * @param setPosition position that music should be set to prior to being played.
+     */
     public static void runEra4Theme(int start, int setPosition) {
         if (start == 0) {
             era4Theme.stop();
