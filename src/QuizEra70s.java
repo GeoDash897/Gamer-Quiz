@@ -1,14 +1,14 @@
 
-/**
- * This program quizzes users on machines and subcultures in the 1970s
- * Author: Wahub Ahmed
- */
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.awt.*;
 import java.util.stream.Collectors;
 
+/**
+ * This program quizzes users on machines and subcultures in the 1970s
+ * @author Wahub Ahmed
+ */
 public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
 
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -20,7 +20,7 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
     private static int blinkTimer = 0;
 
     private static boolean postBootUp = false;
-    
+
     private static int timer = 0;
 
     private static QuestionBank qb = new QuestionBank();
@@ -30,17 +30,17 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
 
     public void standard(Graphics2D g2) {
         flicker(g2);
-        if (postBootUp == false){
+        if (postBootUp == false) {
             bootUpScreen(g2);
         }
-        else if (postBootUp == true){
-        drawQuestion(g2);
-        drawAnswerChoice1(g2);
-        drawAnswerChoice2(g2);
-        drawAnswerChoice3(g2);
-        drawAnswerChoice4(g2);
-        correctAnswerChoices(g2);
-        userResponse(g2);
+        else if (postBootUp == true) {
+            drawQuestion(g2);
+            drawAnswerChoice1(g2);
+            drawAnswerChoice2(g2);
+            drawAnswerChoice3(g2);
+            drawAnswerChoice4(g2);
+            correctAnswerChoices(g2);
+            userResponse(g2);
         }
     }
 
@@ -52,10 +52,11 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         }
     }
 
-     public void flicker(Graphics2D g2) {
+    public void flicker(Graphics2D g2) {
         if (yFlicker <= height + height / 4) {
             yFlicker += 5;
-        } else if (yFlicker > height + height / 4) {
+        }
+        else if (yFlicker > height + height / 4) {
             yFlicker = -400;
         }
         Color tranparentGreen = new Color(0f, 1f, 0f, .5f);
@@ -96,7 +97,7 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
             g2.drawString("***IBM Inc.***", 25, 125);
         }
         if (timer > 1300) {
-            Music.runEra1Theme(1,0);
+            Music.runEra1Theme(1, 0);
             postBootUp = true;
             timer = 0;
         }
@@ -139,7 +140,8 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         blinkTimer++;
         if (blinkTimer < 100) {
             g2.fillRect((userResponse.size() * 20) + 100, 227, 25, 25);
-        } else if (blinkTimer >= 200) {
+        }
+        else if (blinkTimer >= 200) {
             blinkTimer = 0;
         }
     }
@@ -209,8 +211,8 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
                 userResponse.clear();
             }
             if (questionNumber == 4 && userString == "2") {
-                Music.runEra1Theme(0,0);
-                Music.runEra2Theme(1,0);
+                Music.runEra1Theme(0, 0);
+                Music.runEra2Theme(1, 0);
                 era = 2;
                 questionNumber++;
             }
