@@ -7,10 +7,10 @@ import java.awt.*;
 import java.util.stream.Collectors;
 
 /**
- * This program quizzes users on machines and subcultures in the 1970s
+ * This class quizzes users on machines and subcultures in the 1970s.
  * @author Wahub Ahmed
  */
-public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
+public class QuizEra70s extends Alpha implements KeyListener {
 
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private int width = (int) screenSize.getWidth();
@@ -28,7 +28,10 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
     private static ArrayList<String> userResponse = new ArrayList<String>();
 
     private static ArrayList<String> correctAnswer = new ArrayList<String>();
-
+    
+    /**Runs main logic of class.
+     * 
+     */
     public void standard(Graphics2D g2) {
         flicker(g2);
         if (postBootUp == false) {
@@ -52,8 +55,14 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
             Thread.currentThread().interrupt();
         }
     }
-
+    
+    /**Runs logic for moving and drawing transparent green scan lines along the screen to simulate
+     * a CRT monitor effect.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void flicker(Graphics2D g2) {
+        //Note that this logic is equal to height + (height/4)
         if (yFlicker <= height + height / 4) {
             yFlicker += 5;
         }
@@ -65,6 +74,10 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         g2.fillRect(xFlicker, yFlicker, width, height / 4);
         Color yeet = new Color(0.4f, 0.7f, 0.4f, 1f);
         g2.setColor(yeet);
+        /*Transparent green is drawn behind the moving lines
+        Draw individual green lines that move along the screen to simulate CRT scan lines
+        Note that lines are semi-transparent in order to allow player to see through lines
+        (actually read the text)*/
         g2.fillRect(xFlicker, yFlicker, width, height / 128);
         g2.fillRect(xFlicker, yFlicker + 20, width, height / 128);
         g2.fillRect(xFlicker, yFlicker + 40, width, height / 128);
@@ -79,6 +92,10 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         g2.setColor(terminalGreen);
     }
 
+    /**Controls start up sequence prior to revealing the first question.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void bootUpScreen(Graphics2D g2) {
         g2.setColor(terminalGreen);
         timer++;
@@ -105,26 +122,51 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
 
     }
 
+    /**Draws the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawQuestion(Graphics2D g2) {
         g2.drawString(qb.era1Questions(questionNumber), 100, 100);
     }
 
+    /**Draws the first answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswerChoice1(Graphics2D g2) {
         g2.drawString("1. " + qb.era1Answer1(questionNumber), 100, 125);
     }
 
+    /**Draws the second answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswerChoice2(Graphics2D g2) {
         g2.drawString("2. " + qb.era1Answer2(questionNumber), 100, 150);
     }
 
+    /**Draws the third answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswerChoice3(Graphics2D g2) {
         g2.drawString("3. " + qb.era1Answer3(questionNumber), 100, 175);
     }
 
+    /**Draws the fourth answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswerChoice4(Graphics2D g2) {
         g2.drawString("4. " + qb.era1Answer4(questionNumber), 100, 200);
     }
 
+    /**Adds the correct answers to the correctAnswers ArrayList- comes from
+     * the {@linkplain game.QuestionBank QuestionBank} class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void correctAnswerChoices(Graphics2D g2) {
         correctAnswer.add(qb.era1Answer2(0));
         correctAnswer.add(qb.era1Answer1(1));
@@ -133,6 +175,10 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         correctAnswer.add(qb.era1Answer4(4));
     }
 
+    /**Draws the player's response on the screen (simulates typing in command prompt)
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void userResponse(Graphics2D g2) {
         g2.drawString("C:\\\\", 25, 250);
         for (int i = 0; i < userResponse.size(); i++) {
@@ -147,6 +193,11 @@ public class QuizEra70s extends Alpha implements KeyListener {//ActionListener,
         }
     }
 
+    /**Unfinished method; was supposed to create a glitch effect that would
+     * move along the screen during a timed question (also not added) - covering it in the process.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void glitch(Graphics2D g2) {
         int countDown;
         int xGlitch = 0;
