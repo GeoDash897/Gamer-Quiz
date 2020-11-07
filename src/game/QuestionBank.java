@@ -2,7 +2,17 @@ package game;
 
 import java.util.*;
 
+/**Stores and retrieves the questions and answers for each era.
+ * 
+ * @author GeoSonicDash
+ */
 public class QuestionBank {
+    /**Return (int a) question from Era 1.
+     * 
+     * @param a question for the era that is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return question for the (int a) question.
+     */
     public String era1Questions(int a) {
         ArrayList<String> era1questions = new ArrayList<String>(4);
         era1questions.add(0, "Which plant likes to play video games the most?");
@@ -13,6 +23,12 @@ public class QuestionBank {
         return era1questions.get(a);
     }
 
+    /**Return answer choice 1 for the (int a) question from Era 1.
+     * 
+     * @param a question for the era that answer choice 1 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 1 for the (int a) question.
+     */
     public String era1Answer1(int a) {
         ArrayList<String> era1choice1 = new ArrayList<String>(4);
         era1choice1.add(0, "A Java Fern");
@@ -23,6 +39,12 @@ public class QuestionBank {
         return era1choice1.get(a);
     }
 
+    /**Return answer choice 2 for the (int a) question from Era 1.
+     * 
+     * @param a question for the era that answer choice 2 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 2 for the (int a) question.
+     */
     public String era1Answer2(int a) {
         ArrayList<String> era1choice2 = new ArrayList<String>(4);
         era1choice2.add(0, "A Tree");
@@ -33,6 +55,12 @@ public class QuestionBank {
         return era1choice2.get(a);
     }
 
+     /**Return answer choice 3 for the (int a) question from Era 1.
+     * 
+     * @param a question for the era that answer choice 3 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 3 for the (int a) question.
+     */
     public String era1Answer3(int a) {
         ArrayList<String> era1choice3 = new ArrayList<String>(4);
         era1choice3.add(0, "A Factory");
@@ -43,6 +71,12 @@ public class QuestionBank {
         return era1choice3.get(a);
     }
 
+    /**Return answer choice 4 for the (int a) question from Era 1.
+     * 
+     * @param a question for the era that answer choice 4 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 4 for the (int a) question.
+     */
     public String era1Answer4(int a) {
         ArrayList<String> era1choice4 = new ArrayList<String>(4);
         era1choice4.add(0, "A Sunflower");
@@ -53,6 +87,12 @@ public class QuestionBank {
         return era1choice4.get(a);
     }
 
+    /**Return (int a) question from Era 2.
+     * 
+     * @param a question for the era that is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return question for the (int a) question.
+     */
     public String era2Questions(int a) {
         ArrayList<String> era1questions = new ArrayList<String>(4);
         era1questions.add(0, "Which ghost is the smartest?");
@@ -62,6 +102,12 @@ public class QuestionBank {
         return era1questions.get(a);
     }
 
+    /**Return answer choice 1 for the (int a) question from Era 2.
+     * 
+     * @param a question for the era that answer choice 1 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 1 for the (int a) question.
+     */
     public String era2Answer1(int a) {
         ArrayList<String> era2choice1 = new ArrayList<String>(4);
         era2choice1.add(0, "Inky");
@@ -71,6 +117,12 @@ public class QuestionBank {
         return era2choice1.get(a);
     }
 
+    /**Return answer choice 2 for the (int a) question from Era 2.
+     * 
+     * @param a question for the era that answer choice 2 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 2 for the (int a) question.
+     */
     public String era2Answer2(int a) {
         ArrayList<String> era2choice2 = new ArrayList<String>(4);
         era2choice2.add(0, "Blinky");
@@ -80,6 +132,12 @@ public class QuestionBank {
         return era2choice2.get(a);
     }
 
+    /**Return answer choice 3 for the (int a) question from Era 2.
+     * 
+     * @param a question for the era that answer choice 3 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 3 for the (int a) question.
+     */
     public String era2Answer3(int a) {
         ArrayList<String> era2choice3 = new ArrayList<String>(4);
         era2choice3.add(0, "Pinky");
@@ -89,6 +147,12 @@ public class QuestionBank {
         return era2choice3.get(a);
     }
 
+    /**Return answer choice 4 for the (int a) question from Era 2.
+     * 
+     * @param a question for the era that answer choice 4 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 4 for the (int a) question.
+     */
     public String era2Answer4(int a) {
         ArrayList<String> era2choice4 = new ArrayList<String>(4);
         era2choice4.add(0, "Clyde");
@@ -98,6 +162,16 @@ public class QuestionBank {
         return era2choice4.get(a);
     }
 
+    /*Note!- All of the Strings for the questions and answer choices in Era 3 are
+    capitalized due to the algorithm I used to convert the text into Images to display
+    on the screen*/
+    
+    /**Return (int a) question from Era 3.
+     * 
+     * @param a question for the era that is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return question for the (int a) question.
+     */
     public String era3Questions(int a) {
         ArrayList<String> era1questions = new ArrayList<String>(4);
         era1questions.add(0, "WHERE CAN YOU NOTFIND A HEDGEHOG");
@@ -108,6 +182,12 @@ public class QuestionBank {
         return era1questions.get(a);
     }
 
+    /**Return answer choice 1 for the (int a) question from Era 3.
+     * 
+     * @param a question for the era that answer choice 1 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 1 for the (int a) question.
+     */
     public String era3Answer1(int a) {
         ArrayList<String> era1choice1 = new ArrayList<String>(4);
         era1choice1.add(0, "ANTARTICA");
@@ -118,6 +198,12 @@ public class QuestionBank {
         return era1choice1.get(a);
     }
 
+    /**Return answer choice 2 for the (int a) question from Era 3.
+     * 
+     * @param a question for the era that answer choice 2 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 2 for the (int a) question.
+     */
     public String era3Answer2(int a) {
         ArrayList<String> era1choice2 = new ArrayList<String>(4);
         era1choice2.add(0, "CHINA");
@@ -128,6 +214,12 @@ public class QuestionBank {
         return era1choice2.get(a);
     }
 
+    /**Return answer choice 3 for the (int a) question from Era 3.
+     * 
+     * @param a question for the era that answer choice 3 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 3 for the (int a) question.
+     */
     public String era3Answer3(int a) {
         ArrayList<String> era1choice3 = new ArrayList<String>(4);
         era1choice3.add(0, "SAUDI ARABIA");
@@ -138,6 +230,12 @@ public class QuestionBank {
         return era1choice3.get(a);
     }
 
+    /**Return answer choice 4 for the (int a) question from Era 4.
+     * 
+     * @param a question for the era that answer choice 4 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 4 for the (int a) question.
+     */
     public String era3Answer4(int a) {
         ArrayList<String> era1choice4 = new ArrayList<String>(4);
         era1choice4.add(0, "CALIFORNIA");
@@ -148,6 +246,12 @@ public class QuestionBank {
         return era1choice4.get(a);
     }
 
+    /**Return (int a) question from Era 4.
+     * 
+     * @param a question for the era that is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return question for the (int a) question.
+     */
     public String era4Questions(int a) {
         ArrayList<String> era1questions = new ArrayList<String>(3);
         era1questions.add(0, "How much data was used for the black hole image?");
@@ -157,6 +261,12 @@ public class QuestionBank {
         return era1questions.get(a);
     }
 
+    /**Return answer choice 1 for the (int a) question from Era 4.
+     * 
+     * @param a question for the era that answer choice 1 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 1 for the (int a) question.
+     */
     public String era4Answer1(int a) {
         ArrayList<String> era1choice1 = new ArrayList<String>(3);
         era1choice1.add(0, "57 TB");
@@ -166,6 +276,12 @@ public class QuestionBank {
         return era1choice1.get(a);
     }
 
+    /**Return answer choice 2 for the (int a) question from Era 4.
+     * 
+     * @param a question for the era that answer choice 2 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 2 for the (int a) question.
+     */
     public String era4Answer2(int a) {
         ArrayList<String> era1choice2 = new ArrayList<String>(3);
         era1choice2.add(0, "738 GB");
@@ -174,7 +290,13 @@ public class QuestionBank {
         era1choice2.add(3, "Bulbasaur");
         return era1choice2.get(a);
     }
-
+    
+    /**Return answer choice 3 for the (int a) question from Era 4.
+     * 
+     * @param a question for the era that answer choice 3 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 3 for the (int a) question.
+     */
     public String era4Answer3(int a) {
         ArrayList<String> era1choice3 = new ArrayList<String>(3);
         era1choice3.add(0, "5 PB");
@@ -184,6 +306,12 @@ public class QuestionBank {
         return era1choice3.get(a);
     }
 
+    /**Return answer choice 4 for the (int a) question from Era 4.
+     * 
+     * @param a question for the era that answer choice 4 is being asked for (between 0 and 4 to 
+     * keep in within size of the ArrayList).
+     * @return answer choice 4 for the (int a) question.
+     */
     public String era4Answer4(int a) {
         ArrayList<String> era1choice4 = new ArrayList<String>(3);
         era1choice4.add(0, "924 GB");
