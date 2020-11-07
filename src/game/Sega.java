@@ -8,9 +8,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-/**
- *
- * @author GeoSonicDash
+/**This class tests the player about video game culture from the 1990s.
+ * 
+ * @author GeoDash897 (Matthew Roman)
  */
 public class Sega extends Alpha implements ActionListener, KeyListener {
 
@@ -35,6 +35,10 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
     private static Image earthwormMainBackground = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Main Background.png");
     private static String answerString = "Hello";
 
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void standard(Graphics2D g2) {
         drawBackground(g2);
         drawQuestion(g2);
@@ -62,6 +66,11 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
 
     }
 
+    /**Draws the background and the environment on the screen. Changes depending on
+     * each question (Sonic 3 & Knuckles, Earthworm Jim, Super Mario World, Kirby Superstar)
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawBackground(Graphics2D g2) {
         if (questionNumber == 10) {
             g2.drawImage(background1, 0, 0, 384, 384, this);
@@ -111,14 +120,14 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
         else if (questionNumber == 13) {
             Image shore = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Shore.gif");
-            Image background = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MS3 Background.png");
-            Image background2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MS3 Background 2.png");
+            Image mbackground = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MS3 Background.png");
+            Image mbackground2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MS3 Background 2.png");
             Image marco = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Marco Shooting.gif");
             Image rebel = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Rebel Soldier Stand.png");
             Image plane = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Airplane.png");
-            g2.drawImage(background, 0, 0, 936, 600, this);
+            g2.drawImage(mbackground, 0, 0, 936, 600, this);
             g2.drawImage(shore, 0, 600, 2115, 195, this);
-            g2.drawImage(background2, 936, 0, 936, 600, this);
+            g2.drawImage(mbackground2, 936, 0, 936, 600, this);
             g2.drawImage(marco, 400, 500, 200, 148, this);
             g2.drawImage(rebel, 150, 500, 108, 152, this);
             g2.drawImage(plane, xPlane, 100, 320, 152, this);
@@ -139,6 +148,15 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
     }
 
+    /*Looking back, these drawing methods could have been programmed better to avoid repetition.
+    Needed to check for every question/answer choice in order to account for the difference in length
+    of each question string (the longer the question/answer choice, the more it would have to be drawn to the left)
+    Another problem that needed to be taken into account was spacing out the images that were being used to display the question.*/
+    
+    /**Draws the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawQuestion(Graphics2D g2) {
         String test = questionBank.era3Questions(questionNumber - 10);
         String temp[] = test.split("");
@@ -147,6 +165,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         for (int i = 0; i < temp.length; i++) {
             arrayListOfLetters.add(temp[i]);
         }
+        //First, add all of the images that make up the question into an ArrayList
         for (int i = 0; i < arrayListOfLetters.size(); i++) {
             if (arrayListOfLetters.get(i).equals("A")) {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\A.png"));
@@ -230,6 +249,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blank.png"));
             }
         }
+        //Then properly space those images out and draw them
         for (int i = 0; i < arrayListOfImages.size(); i++) {
             int iCounter = 0;
             for (int j = 0; j < i; j++) {
@@ -267,6 +287,10 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
     }
 
+    /**Draws the first answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawChoice1(Graphics2D g2) {
         String test = questionBank.era3Answer1(questionNumber - 10);
         String temp[] = test.split("");
@@ -275,6 +299,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         for (int i = 0; i < temp.length; i++) {
             arrayListOfLetters.add(temp[i]);
         }
+        //First, add all of the images that make up the answer choice into an ArrayList
         for (int i = 0; i < arrayListOfLetters.size(); i++) {
             if (arrayListOfLetters.get(i).equals("A")) {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\A.png"));
@@ -358,6 +383,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blank.png"));
             }
         }
+        //Then properly space those images out and draw them
         for (int i = 0; i < arrayListOfImages.size(); i++) {
             int iCounter = 0;
             for (int j = 0; j < i; j++) {
@@ -395,6 +421,10 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
     }
 
+    /**Draws the second answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawChoice2(Graphics2D g2) {
         String test = questionBank.era3Answer2(questionNumber - 10);
         String temp[] = test.split("");
@@ -403,6 +433,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         for (int i = 0; i < temp.length; i++) {
             arrayListOfLetters.add(temp[i]);
         }
+        //First, add all of the images that make up the answer choice into an ArrayList
         for (int i = 0; i < arrayListOfLetters.size(); i++) {
             if (arrayListOfLetters.get(i).equals("A")) {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\A.png"));
@@ -486,6 +517,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blank.png"));
             }
         }
+        //Then properly space those images out and draw them
         for (int i = 0; i < arrayListOfImages.size(); i++) {
             int iCounter = 0;
             for (int j = 0; j < i; j++) {
@@ -523,6 +555,10 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
     }
 
+    /**Draws the third answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawChoice3(Graphics2D g2) {
         String test = questionBank.era3Answer3(questionNumber - 10);
         String temp[] = test.split("");
@@ -531,6 +567,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         for (int i = 0; i < temp.length; i++) {
             arrayListOfLetters.add(temp[i]);
         }
+        //First, add all of the images that make up the answer choice into an ArrayList
         for (int i = 0; i < arrayListOfLetters.size(); i++) {
             if (arrayListOfLetters.get(i).equals("A")) {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\A.png"));
@@ -614,6 +651,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blank.png"));
             }
         }
+        //Then properly space those images out and draw them
         for (int i = 0; i < arrayListOfImages.size(); i++) {
             int iCounter = 0;
             for (int j = 0; j < i; j++) {
@@ -651,6 +689,10 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         }
     }
 
+    /**Draws the fourth answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawChoice4(Graphics2D g2) {
         String test = questionBank.era3Answer4(questionNumber - 10);
         String temp[] = test.split("");
@@ -659,6 +701,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
         for (int i = 0; i < temp.length; i++) {
             arrayListOfLetters.add(temp[i]);
         }
+        //First, add all of the images that make up the answer choice into an ArrayList
         for (int i = 0; i < arrayListOfLetters.size(); i++) {
             if (arrayListOfLetters.get(i).equals("A")) {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\A.png"));
@@ -742,6 +785,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
                 arrayListOfImages.add(Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blank.png"));
             }
         }
+        //Then properly space those images out and draw them
         for (int i = 0; i < arrayListOfImages.size(); i++) {
             int iCounter = 0;
             for (int j = 0; j < i; j++) {
