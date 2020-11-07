@@ -1,10 +1,6 @@
 package game;
 
 //Add Title screen, update screen (Sans fight),
-/**
- *
- * @author Ryan San Jose
- */
 import java.awt.Graphics2D;
 import java.awt.*;//needed for graphics
 import java.awt.event.ActionEvent;
@@ -12,6 +8,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**This class tests the player about video game culture from the modern era (2000s to today).
+ * It also manages the final boss fight minigame at the end of the quiz.
+ * 
+ * @author Ryan San Jose
+ */
 public class HackathonQuestionsRyan extends Alpha implements KeyListener, ActionListener {
     private static Image Rhydon;
     private static Image Bulbasaur;
@@ -26,7 +27,12 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
     private boolean sanshahatime = false;
     private static Image caves;
 
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void standard(Graphics2D g2) {
+        //Creates Minigame class- used to manage the final boss manage    
         sans = new Minigame();
         caves = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MinecraftCave.png");
         Rhydon = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Rhydon.png");
@@ -68,23 +74,33 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
         }
 
     }
-
+    
+    /**Draws the current question on screen.
+    * 
+    * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+    */
     public void drawQuestion(Graphics2D g2) {
         if (questionNumber == 15) {
-            g2.drawString(qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
         else if (questionNumber == 16) {
-            g2.drawString(qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 100, 40);
         }
         else if (questionNumber == 17) {
-            g2.drawString(qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
         else if (questionNumber == 18) {
-            g2.drawString(qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
 
     }
 
+    /*Looking back, these drawing methods could have been programmed better to avoid repetition.*/
+    
+    /**Draws the first answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer1(Graphics2D g2) {
         g2.setColor(Color.black);
         g2.fillRect(90, 250, 450, 100);
@@ -109,6 +125,10 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
         }
     }
 
+    /**Draws the second answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer2(Graphics2D g2) {
         g2.setColor(Color.black);
         g2.fillRect(790, 250, 450, 100);
@@ -133,6 +153,10 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
         }
     }
 
+    /**Draws the third answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer3(Graphics2D g2) {
         g2.setColor(Color.black);
         g2.fillRect(90, 450, 450, 100);
@@ -157,6 +181,10 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
         }
     }
 
+    /**Draws the fourth answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer4(Graphics2D g2) {
         g2.setColor(Color.black);
         g2.fillRect(790, 450, 450, 100);
@@ -185,6 +213,9 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
 
     }
 
+    /*Controls input for selecting the answer choices
+    Note!- If the question is 19, it sends the input to the Minigame class*/
+    
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == e.VK_LEFT) {
             if (selectedanswer == 2) {
@@ -276,12 +307,11 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
                 selectedanswer = 1;
                 userChoice = 1;
             }
-            else {
-                System.exit(0);
-            }
         }
     }
 
+    //Sends releasing input to the Minigame class
+    
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == e.VK_LEFT) {
             sans = new Minigame();
