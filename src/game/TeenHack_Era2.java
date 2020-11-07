@@ -12,9 +12,9 @@ import java.awt.Rectangle;
 
 public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener {
 
-    private static Image Brick = Toolkit.getDefaultToolkit().getImage("src//resources//brick.png");
-    private static Image Block = Toolkit.getDefaultToolkit().getImage("src//resources//block.png");
-    private static Image mario = Toolkit.getDefaultToolkit().getImage("src//resources//mario.png");
+    private static Image Brick = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\brick.png");
+    private static Image Block = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\block.png");
+    private static Image mario = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\mario.png");
     private static int mariox = 20;
     private static int marioy = 660;
     private static int acceleration = 0;
@@ -37,9 +37,7 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
     private static boolean down = false;
 
     public void standard(Graphics2D g2) {
-        Color blue2 = new Color(60, 188, 252);
-        g2.setColor(blue2);
-        g2.fillRect(0, 0, 2000, 760);
+        drawBackground(g2);
         if (right) {
             mariox += 4;
         }
@@ -48,19 +46,6 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
 
         jumping();
-
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
-        }
-        bricky = 860;
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
-        }
-        bricky = 960;
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
-        }
-        floor = new Rectangle(0, 660, 10000, 10000);
         if (marioy >= 660) {
             jumpCounter = 0;
             down = false;
@@ -87,18 +72,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
     public void drawBackground(Graphics g2) {
         Color blue2 = new Color(60, 188, 252);
         g2.setColor(blue2);
-        g2.fillRect(0, 0, 2000, 760);
+        g2.fillRect(0, 0, 2000, 1080);
         bricky = 760;
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
-        }
-        bricky = 860;
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
-        }
-        bricky = 960;
-        for (int i = 0; i < 100; i++) {
-            g2.drawImage(Brick, brickx + (100 * i), bricky, 100, 100, this);
+        for (int i = 0; i < 30; i++) {
+            g2.drawImage(Brick, brickx + (59 * i), bricky, 59, 62, this);
         }
         floor = new Rectangle(0, 660, 10000, 10000);
     }
