@@ -10,6 +10,12 @@ import java.awt.event.KeyListener;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+/**This class tests the player about video game culture from the 1980s. It also controls
+ * Mario's movement and jumping abilities (despite being dumb downed due to the loss of code
+ * during the hackathon.
+ * 
+ * @author Talha Masood
+ */
 public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener {
 
     private static Image Brick = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\brick.png");
@@ -35,7 +41,11 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
     private static Rectangle marioHitboxHead = new Rectangle(mariox, marioy, 100, 30);
     private static Rectangle marioFeet = new Rectangle(mariox, marioy + 70, 100, 30);
     private static boolean down = false;
-
+    
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void standard(Graphics2D g2) {
         drawBackground(g2);
         if (right) {
@@ -67,7 +77,11 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
             era = 3;
         }
     }
-
+    
+    /**Draws the background and the environment on the screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawBackground(Graphics g2) {
         Color blue2 = new Color(60, 188, 252);
         g2.setColor(blue2);
@@ -79,6 +93,14 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         floor = new Rectangle(0, 660, 10000, 10000);
     }
 
+    /*Looking back, these drawing methods could have been programmed better to avoid repetition.
+    Needed to check for every question/answer choice in order to account for the difference in length
+    of each question string (the longer the question/answer choice, the more it would have to be drawn to the left)*/
+    
+    /**Draws the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawQuestion(Graphics2D g2) {
         g2.drawImage(mario, mariox, marioy, 100, 100, this);
         g2.setColor(Color.BLACK);
@@ -129,6 +151,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
     }
 
+    /**Draws the first answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer1(Graphics2D g2) {
         g2.setColor(Color.BLACK);
         Font font = new Font("Serif", 40, 40);
@@ -176,6 +202,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
     }
 
+    /**Draws the second answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer2(Graphics2D g2) {
         g2.setColor(Color.BLACK);
         Font font = new Font("Serif", 40, 40);
@@ -223,6 +253,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
     }
 
+    /**Draws the third answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer3(Graphics2D g2) {
         Font font = new Font("Serif", 40, 40);
         g2.setFont(font);
@@ -271,6 +305,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
     }
 
+    /**Draws the fourth answer choice for the current question on screen.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void drawAnswer4(Graphics2D g2) {
         Font font = new Font("Serif", 40, 40);
         g2.setFont(font);
@@ -377,13 +415,20 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
 
     }
-
-    public void gravity(int y) {
+    
+    /**Moves Mario's y position toward the ground after he jumps.
+     * 
+     */
+    public void gravity() {
         if (marioy < 760) {
             marioy += acceleration;
         }
     }
 
+    /**Moves Mario in the air when jumping.
+     * 
+     * @param jumping speed at which Mario jumps in the air.
+     */
     public void playerJump(double jumping) {
         down = false;
         marioy -= jumping;
@@ -394,6 +439,9 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
     }
 
+    /**Controls Mario's movement in the air- if he is jumping or falling.
+     * 
+     */
     public void jumping() {
         if (jump) {
             up -= 1;
