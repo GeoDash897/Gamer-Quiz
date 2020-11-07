@@ -44,7 +44,6 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         if (left) {
             mariox -= 4;
         }
-
         jumping();
         if (marioy >= 660) {
             jumpCounter = 0;
@@ -335,14 +334,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
 
         if (e.getKeyCode() == e.VK_SPACE) {
-
-            jumpCounter++;
+            jumpCounter = 1;
             if (jumpCounter == 1) {
                 up = 27;
                 jump = true;
-            }
-            else if (jumpCounter == 2) {
-
             }
 
         }
@@ -385,7 +380,7 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
 
     public void gravity(int y) {
         if (marioy < 760) {
-            marioy += acceleration * .1;
+            marioy += acceleration;
         }
     }
 
@@ -394,7 +389,6 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         marioy -= jumping;
         if (jumping == 0) {
             down = true;
-
             jump = false;
             acceleration = 0;
         }
@@ -407,11 +401,10 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
         }
 
         if (down) {
-
             if (acceleration < 20) {
                 acceleration += 1;
             }
-            gravity(acceleration);
+            gravity();
         }
     }
 
