@@ -31,6 +31,7 @@ public class QuizEra70s extends Alpha implements KeyListener {
     
     /**Runs main logic of class.
      * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
      */
     public void standard(Graphics2D g2) {
         flicker(g2);

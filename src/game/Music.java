@@ -7,7 +7,7 @@ import javax.sound.sampled.Clip;
 
 /**This class loading and playing music from the game.
  *
- * @author GeoSonicDash
+ * @author GeoDash897 (Matthew Roman)
  */
 public class Music {
     private static Clip era1Theme;

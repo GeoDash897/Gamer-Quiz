@@ -1,6 +1,6 @@
 package game;
 
-//6/17/19
+//11/10/19
 
 import java.awt.Color;
 import java.awt.Font;
@@ -27,7 +27,8 @@ import java.util.logging.Logger;
  * 
  * Along with this, it manages {@linkplain game.QuestionBank QuestionBank} (where the quiz questions are
  * stored) as well as {@linkplain game.Music Music} (the class that controls when each era's them plays).
- * @author GeoSonicDash
+ * 
+ * @author GeoDash897 (Matthew Roman)
  */
 public class Alpha extends JFrame implements KeyListener, ActionListener {//opens program
 
