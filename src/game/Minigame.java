@@ -11,9 +11,10 @@ import java.awt.event.KeyListener;
 import java.awt.Image;
 import java.awt.Rectangle;
 
-/**
+/**This class controls the minigame that appears at the end of the quiz (the last question).
+ * It is part of the Modern Era section of the quiz.
  *
- * @author ryansanjose
+ * @author Ryan San Jose
  */
 public class Minigame extends HackathonQuestionsRyan implements KeyListener, ActionListener {
     private static Image sans;
@@ -45,6 +46,10 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
     private static Rectangle hitball;
     private static Image victory;
 
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
     public void badtime(Graphics2D g2) {
         sans = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\sanshaha.png");
         player = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Naenaeman.png");
@@ -76,6 +81,7 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
         g2.drawImage(player, px, py, 200, 200, this);
         g2.drawImage(beam, sx + 10, sy + 25, beamwidth, 100, this);
         g2.drawImage(ball, bax, bay, 75, 75, this);
+        //Move player's x and y depending on keys being pressed
         if (left) {
             px -= 5;
         }
@@ -88,32 +94,42 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
         if (up) {
             py -= 5;
         }
+        //If flag for moving Sans down is true, move him down on screen
         if (sdown) {
             sy += 3;
             if (sy >= 500) {
+                /*If Sans' y reaches >= 500, stop moving, prepare to fire and move up (set booleans)
+                He will move up after he fires*/
                 sdown = false;
                 supnext = true;
                 sfire = true;
             }
         }
+        //If flag for moving Sans up is true, move him up on screen
         if (sup) {
             sy -= 3;
             if (sy <= 50) {
+                /*If Sans' y reaches <= 50, stop moving, prepare to fire and move down (set booleans)
+                He will move down after he fires*/
                 sup = false;
                 sdownnext = true;
                 sfire = true;
 
             }
         }
+        //Controls player firing beam balls
         if (fire) {
+            //Set beam ball picture and hitBox to correct position (where player current is) 
             bax = px;
             bay = py + 15;
             fire = false;
             pew = true;
         }
+        //Shoot out player's beam balls
         if (pew) {
             bax -= 20;
             if (bax <= sx + 200) {
+                //If beam ball hit Sans, end the minigame- go to victory screen
                 if (bay + 75 >= sy && bay <= sy + 200) {
                     sdown = false;
                     sup = false;
@@ -123,15 +139,26 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
                     end = true;
                 }
             }
+            //Reset firing process once beam ball if off screen
             if (bax <= 0) {
                 pew = false;
                 bax = -100;
                 bay = -100;
             }
         }
+        //Controls processes when Sans' fires
         if (sfire) {
             beamwidth += 10;
             if (sx + 10 + beamwidth >= px) {
+                /*Ryan coded the player getting hit by the beam using the player's y position
+                and comparing that to the state of Sans (if he is on the bottom or top
+                of the screen. 
+                He did not use the intersect method from Rectangle- which would have been better looking back
+                (we were crunched for time).
+                sdownnext = Sans is currently at the top of the screen
+                supnext = Sans is currently at the top of the screen
+                If Sans is on top, and player on top, and the edge of the beam is >= player x- "kill" the player (quit game)*
+                If Sans is on down, and player on down, and the edge of the beam is >= player x- "kill" the player (quit game)*/
                 if (sdownnext) {
                     if (py > -153 && py < 147) {
                         System.exit(0);
