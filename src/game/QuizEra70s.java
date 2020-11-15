@@ -139,7 +139,7 @@ public class QuizEra70s extends Alpha implements KeyListener {
      * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
      */
     public void drawQuestion(Graphics2D g2) {
-        g2.drawString(qb.era1Questions(questionNumber), 100, 100);
+        g2.drawString((questionNumber+1)+". "+qb.era1Questions(questionNumber), 100, 100);
     }
 
     /**Draws the first answer choice for the current question on screen.
@@ -257,23 +257,23 @@ public class QuizEra70s extends Alpha implements KeyListener {
             }
             String userString = userResponse.stream().collect(Collectors.joining(""));
             //String concatResponse = userResponse.get(1).concat(userResponse.get(0));
-            if (questionNumber == 0 && userString == "2") {
+            if (questionNumber == 0 && "2".equals(userString)) {
                 questionNumber++;
                 userResponse.clear();
             }
-            if (questionNumber == 1 && userString == "1") {
+            if (questionNumber == 1 && "1".equals(userString)) {
                 questionNumber++;
                 userResponse.clear();
             }
-            if (questionNumber == 2 && userString == "4") {
+            if (questionNumber == 2 && "4".equals(userString)) {
                 questionNumber++;
                 userResponse.clear();
             }
-            if (questionNumber == 3 && userString == "3") {
+            if (questionNumber == 3 && "3".equals(userString)) {
                 questionNumber++;
                 userResponse.clear();
             }
-            if (questionNumber == 4 && userString == "2") {
+            if (questionNumber == 4 && "2".equals(userString)) {
                 Music.runEra1Theme(0, 0);
                 Music.runEra2Theme(1, 0);
                 era = 2;
