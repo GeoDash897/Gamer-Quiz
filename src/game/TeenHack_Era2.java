@@ -17,30 +17,56 @@ import java.awt.Rectangle;
  * @author Talha Masood
  */
 public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener {
-
-    private static Image Brick = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\brick.png");
-    private static Image Block = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\block.png");
-    private static Image mario = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\mario.png");
-    private static int mariox = 20;
-    private static int marioy = 660;
-    private static int acceleration = 0;
-    private static int jumpCounter = 0;
-    public static boolean jump = false;
-    private static Rectangle marioHitbox = new Rectangle(mariox, marioy, 100, 100);
-    private int brickx = 0;
-    private int bricky = 760;
+    
+    private static int mariox;
+    private static int marioy;
+    private static int acceleration;
+    private static int jumpCounter;   
+    private int brickx;
+    private int bricky;    
+    private static int sanswer;
+    private static int fanswer; 
     private static double up = 26;
-    private static int sanswer = 1;
-    private static int fanswer = 0;
-    private QuestionBank ques;
-    private static boolean right = false;
-    private static boolean left = false;
-    private static String SelectedAns = "";
-    private boolean check = false;
+    private static boolean right;
+    private static boolean left;
+    private static boolean down;   
+    public static boolean jump;
+    private boolean check;
+    private static String SelectedAns;
+    private static Image Brick;
+    private static Image Block;
+    private static Image mario;
     private Rectangle floor;
-    private static Rectangle marioHitboxHead = new Rectangle(mariox, marioy, 100, 30);
-    private static Rectangle marioFeet = new Rectangle(mariox, marioy + 70, 100, 30);
-    private static boolean down = false;
+    private static Rectangle marioHitbox;
+    private static Rectangle marioHitboxHead;
+    private static Rectangle marioFeet;  
+    private QuestionBank ques;
+    
+    public TeenHack_Era2() {
+        mariox = 20;
+        marioy = 660;
+        acceleration = 0;
+        jumpCounter = 0;   
+        brickx = 0;
+        bricky = 760;    
+        sanswer = 1;
+        fanswer = 0; 
+        up = 26;
+        right = false;
+        left = false;
+        down = false;   
+        jump = false;
+        check = false;
+        SelectedAns = "";
+        Brick = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\brick.png");
+        Block = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\block.png");
+        mario = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\mario.png");
+        floor = new Rectangle(0, 660, 10000, 10000);
+        marioHitbox = new Rectangle(mariox, marioy, 100, 100);
+        marioHitboxHead = new Rectangle(mariox, marioy, 100, 30);
+        marioFeet = new Rectangle(mariox, marioy + 70, 100, 30);  
+        ques = new QuestionBank();
+    }
     
     /**Runs main logic of class.
      * 
