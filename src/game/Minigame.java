@@ -16,7 +16,7 @@ import java.awt.Rectangle;
  *
  * @author Ryan San Jose
  */
-public class Minigame extends HackathonQuestionsRyan implements KeyListener, ActionListener {
+public class Minigame implements KeyListener, ActionListener {
     private static Image sans;
     private static Image player;
     private static Image beam;
@@ -77,10 +77,10 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
         g2.fillRect(sx+10, sy+25, beamwidth, 100);
         g2.setColor(Color.orange);
         g2.fillRect(bax, bay, 75, 75);*/
-        g2.drawImage(sans, sx, sy, 200, 200, this);
-        g2.drawImage(player, px, py, 200, 200, this);
-        g2.drawImage(beam, sx + 10, sy + 25, beamwidth, 100, this);
-        g2.drawImage(ball, bax, bay, 75, 75, this);
+        g2.drawImage(sans, sx, sy, 200, 200, null);
+        g2.drawImage(player, px, py, 200, 200, null);
+        g2.drawImage(beam, sx + 10, sy + 25, beamwidth, 100, null);
+        g2.drawImage(ball, bax, bay, 75, 75, null);
         //Move player's x and y depending on keys being pressed
         if (left) {
             px -= 5;
@@ -184,7 +184,7 @@ public class Minigame extends HackathonQuestionsRyan implements KeyListener, Act
             }
         }
         if (end) {
-            g2.drawImage(victory, -200, 0, 1920, 1080, this);
+            g2.drawImage(victory, -200, 0, 1920, 1080, null);
         }
     }
 
