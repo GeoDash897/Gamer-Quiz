@@ -13,28 +13,50 @@ import java.util.ArrayList;
  * @author GeoDash897 (Matthew Roman)
  */
 public class Sega extends Alpha implements ActionListener, KeyListener {
+   
+    private static int answerChoice;
+    private static int xPlane;
+    private static String answerString;
+    private static Image background1;
+    private static Image background2;
+    private static Image background3;
+    private static Image background4;
+    private static Image background5;
+    private static Image background6;
+    private static Image background7;
+    private static Image background8;
+    private static Image leftCorner;
+    private static Image leftEdge;
+    private static Image waterfall;
+    private static Image sonicVictory;
+    private static Image earthwormBack1;
+    private static Image earthwormBack2;
+    private static Image earthwormBack3;
+    private static Image earthwormMainBackground;   
+    private static QuestionBank questionBank;
 
-    private static QuestionBank questionBank = new QuestionBank();
-    private static int answerChoice = 1;
-    private static int xPlane = 2000;
-    private static Image background1 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 1.png");
-    private static Image background2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 2.png");
-    private static Image background3 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 3.png");
-    private static Image background4 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 4.png");
-    private static Image background5 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 5.png");
-    private static Image background6 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 6.png");
-    private static Image background7 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 7.png");
-    private static Image background8 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 8.png");
-    private static Image leftCorner = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Ground Left Corner.png");
-    private static Image leftEdge = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Ground Left Edge.png");
-    private static Image waterfall = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Waterfall.gif");
-    private static Image sonicVictory = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Sonic Victory.gif");
-    private static Image earthwormBack1 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 1.png");
-    private static Image earthwormBack2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 2.png");
-    private static Image earthwormBack3 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 3.png");
-    private static Image earthwormMainBackground = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Main Background.png");
-    private static String answerString = "Hello";
-
+    public Sega() {
+        answerChoice = 1;
+        xPlane = 2000;
+        answerString = "Hello";
+        background1 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 1.png");
+        background2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 2.png");
+        background3 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 3.png");
+        background4 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 4.png");
+        background5 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 5.png");
+        background6 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 6.png");
+        background7 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 7.png");
+        background8 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Background 8.png");
+        leftCorner = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Ground Left Corner.png");
+        leftEdge = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\HydroCity Ground Left Edge.png");
+        waterfall = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Waterfall.gif");
+        sonicVictory = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Sonic Victory.gif");
+        earthwormBack1 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 1.png");
+        earthwormBack2 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 2.png");
+        earthwormBack3 = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Background 3.png");
+        earthwormMainBackground = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\JJ Main Background.png");   
+        questionBank = new QuestionBank();
+    }
     /**Runs main logic of class.
      * 
      * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
@@ -158,6 +180,7 @@ public class Sega extends Alpha implements ActionListener, KeyListener {
      * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
      */
     public void drawQuestion(Graphics2D g2) {
+        g2.drawString((questionNumber+1)+".", 50, 100);
         String test = questionBank.era3Questions(questionNumber - 10);
         String temp[] = test.split("");
         ArrayList<String> arrayListOfLetters = new ArrayList<String>();
