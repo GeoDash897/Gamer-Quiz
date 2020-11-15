@@ -85,16 +85,16 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
     */
     public void drawQuestion(Graphics2D g2) {
         if (questionNumber == 15) {
-            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString((questionNumber+1)+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
         else if (questionNumber == 16) {
-            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 100, 40);
+            g2.drawString((questionNumber+1)+". "+qb.era4Questions(questionNumber - 15), 100, 40);
         }
         else if (questionNumber == 17) {
-            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString((questionNumber+1)+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
         else if (questionNumber == 18) {
-            g2.drawString(questionNumber+". "+qb.era4Questions(questionNumber - 15), 350, 40);
+            g2.drawString((questionNumber+1)+". "+qb.era4Questions(questionNumber - 15), 350, 40);
         }
 
     }
