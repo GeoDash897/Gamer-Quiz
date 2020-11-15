@@ -56,7 +56,7 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
         w.setVisible(true);
         w.addKeyListener(w);//allows for ket pressing to move objects 
         terminalGreen = new Color(70, 235, 52);
-        cyan = new Color(36, 177, 201);
+        cyan = new Color(36, 177, 201);        
         try {
             terminal = Font.createFont(Font.TRUETYPE_FONT, new File("src\\game\\resources\\clacon.ttf")).deriveFont(45f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -79,29 +79,32 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
             Graphics2D g2 = (Graphics2D) g;
             RenderingHints rh = new RenderingHints(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_SPEED);
             g2.setRenderingHints(rh);
+            //Create all of the eras
+            if(era70s == null) {
+                era70s = new QuizEra70s();
+                era80s = new TeenHack_Era2();
+                sega = new Sega();
+                today = new HackathonQuestionsRyan();
+            }
             //Controls when each era's logic runs
             if (era == 1) {
                 g2.setColor(terminalGreen);
-                g2.setFont(terminal);
-                era70s = new QuizEra70s();
+                g2.setFont(terminal);                
                 era70s.standard(g2);
             }
             else if (era == 2) {
                 g2.setColor(terminalGreen);
-                g2.setFont(terminal);
-                era80s = new TeenHack_Era2();
+                g2.setFont(terminal);               
                 era80s.standard(g2);
             }
             else if (era == 3) {
                 g2.setColor(terminalGreen);
-                g2.setFont(terminal);
-                sega = new Sega();
+                g2.setFont(terminal);               
                 sega.standard(g2);
             }
             else if (era == 4) {
                 g2.setColor(cyan);
-                g2.setFont(terminal);
-                today = new HackathonQuestionsRyan();
+                g2.setFont(terminal);                
                 today.standard(g2);
             }
             super.paintComponent(g2);//allows for painting and
@@ -145,77 +148,61 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
         }
         if (e.getKeyCode() == e.VK_LEFT) {
             if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyPressed(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
         if (e.getKeyCode() == e.VK_RIGHT) {
             if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyPressed(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
         if (e.getKeyCode() == e.VK_UP) {
             if (era == 3) {
-                sega = new Sega();
                 sega.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
         if (e.getKeyCode() == e.VK_DOWN) {
             if (era == 3) {
-                sega = new Sega();
                 sega.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
         if (e.getKeyCode() == e.VK_SPACE) {
             if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
         if (e.getKeyCode() == e.VK_ENTER) {
             if (era == 1) {
-                era70s = new QuizEra70s();
                 era70s.keyPressed(e);
             }
             else if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyPressed(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyPressed(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyPressed(e);
             }
         }
@@ -225,69 +212,55 @@ public class Alpha extends JFrame implements KeyListener, ActionListener {//open
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == e.VK_LEFT) {
             if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyReleased(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyReleased(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
         if (e.getKeyCode() == e.VK_RIGHT) {
             if (era == 2) {
-                era80s = new TeenHack_Era2();
                 era80s.keyReleased(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyReleased(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
         if (e.getKeyCode() == e.VK_UP) {
             if (era == 3) {
-                sega = new Sega();
                 sega.keyReleased(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
         if (e.getKeyCode() == e.VK_DOWN) {
             if (era == 3) {
-                sega = new Sega();
                 sega.keyReleased(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
         if (e.getKeyCode() == e.VK_ENTER) {
             if (era == 1) {
-                era70s = new QuizEra70s();
                 era70s.keyReleased(e);
             }
             else if (era == 3) {
-                sega = new Sega();
                 sega.keyReleased(e);
             }
             else if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
         if (e.getKeyCode() == e.VK_SPACE) {
             if (era == 4) {
-                today = new HackathonQuestionsRyan();
                 today.keyReleased(e);
             }
         }
