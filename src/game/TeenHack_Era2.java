@@ -123,58 +123,37 @@ public class TeenHack_Era2 extends Alpha implements KeyListener, ActionListener 
     Needed to check for every question/answer choice in order to account for the difference in length
     of each question string (the longer the question/answer choice, the more it would have to be drawn to the left)*/
     
+    //Removed most of the uneeded painting and actually used drawBackground method
+    
     /**Draws the current question on screen.
      * 
      * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
      */
     public void drawQuestion(Graphics2D g2) {
-        g2.drawImage(mario, mariox, marioy, 100, 100, this);
-        g2.setColor(Color.BLACK);
+        drawBackground(g2); 
+        g2.setColor(Color.BLACK);               
+        g2.drawString("Question: " + (questionNumber+1), 5, 50);
         if (questionNumber == 5) {
-            g2.drawString("Question: " + questionNumber, 5, 50);
             String question = ques.era2Questions(questionNumber - 5);
+            g2.setColor(Color.BLACK);
             g2.drawString(question, 450, 150);
         }
-        else if (questionNumber == 6) {
-            g2.setColor(Color.white);
-            g2.fillRect(0, 0, 5000, 5000);
-            g2.setColor(Color.BLACK);
-            drawBackground(g2);
-            g2.drawImage(mario, mariox, marioy, 100, 100, this);
+        else if (questionNumber == 6) {         
             String question = ques.era2Questions(questionNumber - 5);
-            g2.setColor(Color.BLACK);
-            g2.drawString("Question: " + questionNumber, 5, 60);
+            g2.setColor(Color.BLACK);           
             g2.drawString(question, 150, 150);
         }
-        else if (questionNumber == 7) {
-            g2.setColor(Color.white);
-            g2.fillRect(0, 0, 5000, 5000);
-            g2.setColor(Color.BLACK);
-            drawBackground(g2);
-            g2.drawImage(mario, mariox, marioy, 100, 100, this);
+        else if (questionNumber == 7) {           
             String question = ques.era2Questions(questionNumber - 5);
             g2.setColor(Color.BLACK);
-            g2.drawString("Question: " + questionNumber, 5, 50);
             g2.drawString(question, 200, 150);
         }
         else if (questionNumber == 8) {
-            g2.setColor(Color.white);
-            g2.fillRect(0, 0, 5000, 5000);
-            g2.setColor(Color.BLACK);
-            drawBackground(g2);
-            g2.drawImage(mario, mariox, marioy, 100, 100, this);
             String question = ques.era2Questions(questionNumber - 5);
             g2.setColor(Color.BLACK);
-            g2.drawString("Question: " + questionNumber, 5, 50);
             g2.drawString(question, 320, 150);
         }
-        else if (questionNumber > 8) {
-            g2.setColor(Color.white);
-            g2.fillRect(0, 0, 5000, 5000);
-            g2.setColor(Color.BLACK);
-            drawBackground(g2);
-            g2.drawImage(mario, mariox, marioy, 100, 100, this);
-        }
+        g2.drawImage(mario, mariox, marioy, 100, 100, this);
     }
 
     /**Draws the first answer choice for the current question on screen.
