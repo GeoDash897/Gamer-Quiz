@@ -12,22 +12,33 @@ import java.util.stream.Collectors;
  */
 public class QuizEra70s extends Alpha implements KeyListener {
 
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private int width = (int) screenSize.getWidth();
-    private int height = (int) screenSize.getHeight();
+    private Dimension screenSize;
+    private int width;
+    private int height;
 
-    private static int xFlicker = 0;
-    private static int yFlicker = -400;
-    private static int blinkTimer = 0;
+    private static int xFlicker;
+    private static int yFlicker;
+    private static int blinkTimer;
+    private static int timer;
+    private static boolean postBootUp;
 
-    private static boolean postBootUp = false;
-
-    private static int timer = 0;
-
-    private static QuestionBank qb = new QuestionBank();
-    private static ArrayList<String> userResponse = new ArrayList<String>();
-
-    private static ArrayList<String> correctAnswer = new ArrayList<String>();
+    private static QuestionBank qb;
+    private static ArrayList<String> userResponse;
+    private static ArrayList<String> correctAnswer;
+    
+    public QuizEra70s() {
+        screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        width = (int) screenSize.getWidth();
+        height = (int) screenSize.getHeight();
+        xFlicker = 0;
+        yFlicker = -400;
+        blinkTimer = 0;
+        postBootUp = false;
+        timer = 0;
+        qb = new QuestionBank();
+        userResponse = new ArrayList<String>();
+        correctAnswer = new ArrayList<String>();             
+    }
     
     /**Runs main logic of class.
      * 
