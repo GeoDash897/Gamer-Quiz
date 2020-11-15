@@ -17,45 +17,71 @@ import java.awt.Rectangle;
  * @author Ryan San Jose
  */
 public class Minigame implements KeyListener, ActionListener {
+    private static int sx;
+    private static int sy;
+    private static int px;
+    private static int py;
+    private static int bax;
+    private static int bay;
+    private static int beamwidth;
+    private static boolean left;
+    private static boolean right;
+    private static boolean up;
+    private static boolean down;
+    private static boolean sup;
+    private static boolean sdown;
+    private static boolean supnext;
+    private static boolean sdownnext;
+    private static boolean fire;
+    private static boolean sfire;
+    private static boolean pew;
+    private static boolean end;
     private static Image sans;
-    private static Image player;
+    private static Image player;    
     private static Image beam;
     private static Image ball;
-    private static int sx = 100;
-    private static int sy = 400;
-    private static int px = 700;
-    private static int py = 400;
-    private static int bax = -100;
-    private static int bay = -100;
-    private static boolean left = false;
-    private static boolean right = false;
-    private static boolean up = false;
-    private static boolean down = false;
-    private static boolean sup = false;
-    private static boolean sdown = true;
-    private static boolean supnext = false;
-    private static boolean sdownnext = false;
-    private static boolean fire = false;
-    private static boolean sfire = false;
-    private static boolean pew = false;
-    private static boolean end = false;
-    private static int beamwidth = 0;
+    private static Image victory;
     private static Rectangle hitsans;
     private static Rectangle hitplay;
     private static Rectangle hitbeam;
     private static Rectangle hitball;
-    private static Image victory;
-
-    /**Runs main logic of class.
-     * 
-     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
-     */
-    public void badtime(Graphics2D g2) {
+   
+    public Minigame() {
+        sx = 100;
+        sy = 400;
+        px = 700;
+        py = 400;
+        bax = -100;
+        bay = -100;
+        beamwidth = 0;
+        left = false;
+        right = false;
+        up = false;
+        down = false;
+        sup = false;
+        sdown = true;
+        supnext = false;
+        sdownnext = false;
+        fire = false;
+        sfire = false;
+        pew = false;
+        end = false;
         sans = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\sanshaha.png");
         player = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Naenaeman.png");
         beam = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Beam.png");
         ball = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Ball.png");
         victory = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Victory.gif");
+        hitsans = new Rectangle(sx, sy, 200, 200);
+        hitplay = new Rectangle(px, py, 200, 200);
+        hitbeam = new Rectangle(sx + 10, sy + 25, beamwidth, 100);
+        hitball = new Rectangle(bax, bay, 75, 75);
+    }
+    
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
+    public void badtime(Graphics2D g2) {
         hitsans = new Rectangle(sx, sy, 200, 200);
         hitplay = new Rectangle(px, py, 200, 200);
         hitbeam = new Rectangle(sx + 10, sy + 25, beamwidth, 100);
