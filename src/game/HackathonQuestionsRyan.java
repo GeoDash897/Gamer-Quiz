@@ -14,32 +14,37 @@ import java.awt.event.KeyListener;
  * @author Ryan San Jose
  */
 public class HackathonQuestionsRyan extends Alpha implements KeyListener, ActionListener {
+    private static int selectedanswer = 1;
+    private static int userChoice = selectedanswer;
+    private boolean sanshahatime = false;
+    private String answer;
+    private static Image caves;
     private static Image Rhydon;
     private static Image Bulbasaur;
     private static Image Mew;
     private static Image Arceus;
     private static Image Blackhole;
-    private static int selectedanswer = 1;
-    private static int userChoice = selectedanswer;
-    private QuestionBank qb = new QuestionBank();
-    private String answer;
     public Minigame sans;
-    private boolean sanshahatime = false;
-    private static Image caves;
-
-    /**Runs main logic of class.
-     * 
-     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
-     */
-    public void standard(Graphics2D g2) {
-        //Creates Minigame class- used to manage the final boss manage    
+    private QuestionBank qb;
+    
+    public HackathonQuestionsRyan() {
+        //Creates Minigame class- used to manage the final boss manage   
         sans = new Minigame();
+        qb = new QuestionBank();
         caves = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\MinecraftCave.png");
         Rhydon = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Rhydon.png");
         Bulbasaur = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Bulbasaur.png");
         Mew = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Mew.png");
         Arceus = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Arceus.png");
         Blackhole = Toolkit.getDefaultToolkit().getImage("src\\game\\resources\\Blackhole.jpg");
+    }
+    
+    /**Runs main logic of class.
+     * 
+     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
+     */
+    public void standard(Graphics2D g2) {
+        
         g2.drawImage(caves, 0, 0, 2304, 1440, this);
         g2.setColor(Color.cyan);
         Font font = new Font("Serif", 35, 35);
@@ -48,7 +53,6 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
             sans.badtime(g2);
         }
         else {
-            qb = new QuestionBank();
             drawQuestion(g2);
             drawAnswer1(g2);
             drawAnswer2(g2);
@@ -227,7 +231,6 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
                 userChoice = 3;
             }
             if (questionNumber == 19) {
-                sans = new Minigame();
                 sans.keyPressed(e);
             }
         }
@@ -241,7 +244,6 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
                 userChoice = 4;
             }
             if (questionNumber == 19) {
-                sans = new Minigame();
                 sans.keyPressed(e);
             }
         }
@@ -255,7 +257,6 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
                 userChoice = 2;
             }
             if (questionNumber == 19) {
-                sans = new Minigame();
                 sans.keyPressed(e);
             }
         }
@@ -269,7 +270,6 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
                 userChoice = 3;
             }
             if (questionNumber == 19) {
-                sans = new Minigame();
                 sans.keyPressed(e);
             }
         }
@@ -314,23 +314,18 @@ public class HackathonQuestionsRyan extends Alpha implements KeyListener, Action
     
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == e.VK_LEFT) {
-            sans = new Minigame();
             sans.keyReleased(e);
         }
         if (e.getKeyCode() == e.VK_RIGHT) {
-            sans = new Minigame();
             sans.keyReleased(e);
         }
         if (e.getKeyCode() == e.VK_DOWN) {
-            sans = new Minigame();
             sans.keyReleased(e);
         }
         if (e.getKeyCode() == e.VK_UP) {
-            sans = new Minigame();
             sans.keyReleased(e);
         }
         if (e.getKeyCode() == e.VK_SPACE) {
-            sans = new Minigame();
             sans.keyReleased(e);
         }
     }
