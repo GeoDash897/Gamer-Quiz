@@ -37,7 +37,8 @@ public class QuizEra70s extends Alpha implements KeyListener {
         timer = 0;
         qb = new QuestionBank();
         userResponse = new ArrayList<String>();
-        correctAnswer = new ArrayList<String>();             
+        correctAnswer = new ArrayList<String>();     
+        getCorrectAnswerChoices();
     }
     
     /**Runs main logic of class.
@@ -54,10 +55,9 @@ public class QuizEra70s extends Alpha implements KeyListener {
             drawAnswerChoice1(g2);
             drawAnswerChoice2(g2);
             drawAnswerChoice3(g2);
-            drawAnswerChoice4(g2);
-            correctAnswerChoices(g2);
+            drawAnswerChoice4(g2);               
             userResponse(g2);
-        }
+        }       
     }
 
     public static void pause(int time) {
@@ -177,14 +177,13 @@ public class QuizEra70s extends Alpha implements KeyListener {
     /**Adds the correct answers to the correctAnswers ArrayList- comes from
      * the {@linkplain game.QuestionBank QuestionBank} class.
      * 
-     * @param g2 {@linkplain java.awt.Graphics2D Graphics2D} object used for painting.
      */
-    public void correctAnswerChoices(Graphics2D g2) {
+    private void getCorrectAnswerChoices() {
         correctAnswer.add(qb.era1Answer2(0));
         correctAnswer.add(qb.era1Answer1(1));
         correctAnswer.add(qb.era1Answer4(2));
         correctAnswer.add(qb.era1Answer3(3));
-        correctAnswer.add(qb.era1Answer4(4));
+        correctAnswer.add(qb.era1Answer4(2));
     }
 
     /**Draws the player's response on the screen (simulates typing in command prompt)
