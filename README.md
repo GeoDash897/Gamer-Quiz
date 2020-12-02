@@ -9,7 +9,6 @@ It also was influenced by the [Impossible Quiz Series](https://impossible-quiz.f
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/GeoDash897/Hackathon-Quiz-Game?color=light&include_prereleases)
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/GeoDash897/Hackathon-Quiz-Game/latest?include_prereleases&logo=GitHub)
 ![GitHub repo size](https://img.shields.io/github/repo-size/GeoDash897/Hackathon-Quiz-Game?logo=GitHub)
-<img src = "/GitHub Resources/Gameplay.gif" width = 1100 height = "500"/>
 
 <!-- omit in toc -->
 ## Table of Contents
@@ -88,7 +87,7 @@ We decided to mimic an **IBM PC** from that time.
 
 ### Boot Up Sequence
 
-<img src = "/GitHub Resources/Temp.gif" width = "1100" height = "500"/>
+<img src = "/GitHub Resources/Boot Up Sequence.gif" width = "1100" height = "500"/>
 
 Many computers at the time had a standard boot up sequence, outlining various parts of the hardware being started.
 
@@ -101,7 +100,7 @@ In order to simulate this, we programmed a transparent rectangle with lines that
 
 ### Command Line Typing
 
-<img src = "/GitHub Resources/Temp2.gif" width = "1100" height = "500"/>
+<img src = "/GitHub Resources/CMD Typing.gif" width = "1100" height = "500"/>
 
 Another characterisitic of computers at this time was the lack interactable GUIs. Computer owners had to master the **command line** in order to properly navigate and user their machine.
 
