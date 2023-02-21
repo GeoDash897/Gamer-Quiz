@@ -87,7 +87,7 @@ We decided to mimic an **IBM PC** from that time.
 
 ### Boot Up Sequence
 
-<img src = "/GitHub Resources/Boot Up Sequence.gif" width = "1100" height = "500"/>
+https://user-images.githubusercontent.com/55932902/220272019-1015615f-5cde-4b65-ad46-2635d6de8f5c.mp4
 
 Many computers at the time had a standard boot up sequence, outlining various parts of the hardware being started.
 
@@ -100,7 +100,7 @@ In order to simulate this, we programmed a transparent rectangle with lines that
 
 ### Command Line Typing
 
-<img src = "/GitHub Resources/CMD Typing.gif" width = "1100" height = "500"/>
+https://user-images.githubusercontent.com/55932902/220272156-847b3cfb-b8a8-42b6-871a-0bc0affff0f8.mp4
 
 Another characterisitic of computers at this time was the lack interactable GUIs. Computer owners had to master the **command line** in order to properly navigate and user their machine.
 
@@ -112,7 +112,7 @@ We decided to base this part around *Super Mario Bros*.
 
 ### Movement and Jumping
 
-<img src = "/GitHub Resources/Mario Movement.gif" width = "1100" height = "500"/>
+https://user-images.githubusercontent.com/55932902/220268121-e70b83de-cd18-4353-96d4-c7c647dae94b.mp4
 
 Upgrades to **8 bit** color, **8 bit** CPU architecture, and new sound cards allowed for new genres of games. One genre was the **platformer**.<br />
 First brought forth by Atari 2600 classic *Pitfall* and then popularized further with NES hit *Super Mario Bros*, platformers dominated consoles during the 1980s.
@@ -121,7 +121,7 @@ In order to simulate that style of game, we made is so that the player could **m
 
 ### Hitting Blocks
 
-<img src = "/GitHub Resources/Hitting Blocks.gif" width = "1100" height = "500"/>
+https://user-images.githubusercontent.com/55932902/220267736-6d32dcc6-540e-4f7b-a96f-9b9a5ca3f2c9.mp4
 
 In *Super Mario Bros*, the player has the ability to **hit blocks** in the level around them, something crucial in obtaining power-ups and clearing paths.
 
