@@ -8,7 +8,6 @@ It also was influenced by the [Impossible Quiz Series](https://impossible-quiz.f
 ![Java version](https://img.shields.io/badge/java%20ver-13-brightgreen)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/GeoDash897/Hackathon-Quiz-Game?color=light&include_prereleases)
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/GeoDash897/Hackathon-Quiz-Game/latest?include_prereleases&logo=GitHub)
-![GitHub repo size](https://img.shields.io/github/repo-size/GeoDash897/Hackathon-Quiz-Game?logo=GitHub)
 
 <!-- omit in toc -->
 ## Table of Contents
